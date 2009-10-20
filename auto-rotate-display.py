@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-""" Daemon which reads the position of the laptop and change the display ro tation so that it's always horizontal.
+""" Daemon which reads the position of the laptop and change the display rotation so that it's always horizontal.
 """
 
 import os
@@ -16,8 +16,10 @@ def run_shell_cmd(cmd):
     out = p.stdout.read().strip()
     return out  #This is the stdout from the shell command
 
+# TODO if the font rendering is using subpixel rendering, we should also rotate the order (eg: RGB -> vRGB)
+
 class AutoRotate:
-    """The main class for autoration"""
+    """The main class for autorotation"""
 
     # TODO it would be better to directly read xrandr info (via the xrandr module or pyrandr) (but it doesn't support xrandr 1.2 rotation yet)
     # Read the current rotation 
